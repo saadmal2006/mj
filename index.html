@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you want to be my Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #fce4ec; /* Rose pastel */
+            margin: 50px;
+        }
+
+        #question, #response {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #e91e63; /* Rose vif */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4081; /* Rose foncé */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c51162; /* Rose plus foncé au survol */
+        }
+
+        .hearts {
+            font-size: 24px;
+            color: #e91e63; /* Rose vif */
+            margin-top: 20px;
+        }
+
+        #response {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #prefer, #mess {
+            color: #ff4081; /* Rose foncé */
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #backButton {
+            background-color: #e91e63; /* Rose vif */
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: color: #ff4081; /* Gris doux */
+        }
+    </style>
+</head>
+<body>
+
+<div id="question">
+    <h1>Do you want to be my Valentine Princesse?</h1>
+    <button onclick="showResponse('Yes')">Yes</button>
+    <button onclick="showResponse('No')">No</button>
+    <div class="hearts">&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;</div>
+</div>
+
+<div id="response">
+    <p id="prefer"></p>
+    <p id="mess"></p>
+    <div class="hearts">&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;&#10084;&#65039;</div>
+    <br>
+    <button id="backButton" onclick="goBack()">Back</button>
+</div>
+
+<footer>
+    <p id="date">16/05/2023❤️❤️❤️</p>
+</footer>
+
+<script>
+    function showResponse(response) {
+        document.getElementById('question').style.display = 'none';
+        document.getElementById('response').style.display = 'block';
+
+        if (response === 'Yes') {
+            document.getElementById('prefer').innerHTML = 'je préfère ouais! 😊';
+        } else {
+            document.getElementById('mess').innerHTML = 'Oh,la pute! ';
+        }
+    }
+
+    function goBack() {
+        document.getElementById('question').style.display = 'block';
+        document.getElementById('response').style.display = 'none';
+        document.getElementById('prefer').innerHTML = '';
+        document.getElementById('mess').innerHTML = '';
+    }
+</script>
+
+</body>
+</html>
+
